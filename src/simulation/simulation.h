@@ -16,10 +16,8 @@ public:
 
     void onNotify(sf::RenderWindow& window, int event) override;
     void draw(sf::RenderWindow& window);
+    bool end();
 };
-
-
-
 
 simulation::simulation() {
     env.init_board();
@@ -43,6 +41,11 @@ void simulation::onNotify(sf::RenderWindow& window, int event){
         case sf::Event::MouseMoved:{
             break;
         }
+        case CUSTOM_SFEV::Idle:{
+            if (end()) {
+                window.close();
+            }
+        }
     
     default:
         break;
@@ -63,3 +66,9 @@ void simulation::draw(sf::RenderWindow& window) {
 
 }
 
+bool simulation::end() {
+    if (env.get_cells()->empty()) {
+        return true;
+    }
+    return false;
+}

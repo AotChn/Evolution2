@@ -4,11 +4,13 @@
 #include <SFML/Graphics.hpp>
 //#include "color_constants.h"
 
-const unsigned int SCREEN_WIDTH = 1200;
+const unsigned int SCREEN_WIDTH = 1500;
 const unsigned int SCREEN_HEIGHT = 1000;
 
-const unsigned int NUM_CELLS = 30;
-const unsigned int FOOD_AMT = 10000;
+namespace board_params {
+    const unsigned int CELLS_AMT = 200;
+    const unsigned int FOOD_AMT = 10000;
+}
 
 enum CUSTOM_SFEV{
     Idle = -1,

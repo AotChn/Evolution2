@@ -9,7 +9,7 @@ void Cell::set_dir(int X, int Y) {
     dir.set_pos(X, Y);
 }
 
-void Cell::set_speed(int s) {
+void Cell::set_speed(double s) {
     if (s <= 0) {
         s = 1;
     }

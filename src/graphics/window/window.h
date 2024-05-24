@@ -17,6 +17,8 @@ class Window: public Window_Publisher {
     void render();
     void update();
     void process_events();
+    void close();
+    void close(bool);
 
     private: 
     sf::RenderWindow window;

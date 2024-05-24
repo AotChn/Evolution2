@@ -1,7 +1,7 @@
 #include "board.h"
 
 //===========================================
-//	UTILITY 
+//	HELPER
 //===========================================
 namespace utils{
 
@@ -12,12 +12,6 @@ void remove(std::vector<T>& v, int idx) {
     if (v.size() == 1) {
         v.pop_back();
     }
-}
-
-//checks if item is in container 
-template<class C, typename T>
-bool contains(C&& c, T e) { 
-    return std::find(std::begin(c), std::end(c), e) != std::end(c); 
 }
 
 //generates a random number from min to max
@@ -34,8 +28,8 @@ int gen_num(int min, int max){
 //	BOARD MANIPULATION
 //===========================================
 
-void Board::init_board() {
-    fill_board(FOOD_AMT, NUM_CELLS);
+void Board::init_board(int f, int c) {
+    fill_board(f, c);
 }
 
 void Board::add_cell(int x, int y, int s) {

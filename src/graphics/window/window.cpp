@@ -3,7 +3,6 @@
 Window::Window() {
     window.create(sf::VideoMode(SCREEN_WIDTH,SCREEN_HEIGHT),"EVOLUTION");
     window.setFramerateLimit(60);
-    // sf::Mouse::setPosition(sf::Vector2i(0,0), window);
 }
 
 void Window::run(){
@@ -45,3 +44,12 @@ void Window::process_events(){
     else Notify(window, CUSTOM_SFEV::Idle);  
 }
 
+void Window::close() {
+    Notify(window, 0);
+}
+
+void Window::close(bool t) {
+    if (t) {
+        close();
+    }
+}
