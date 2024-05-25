@@ -8,6 +8,7 @@ int main() {
    Window w;
    simulation sim;
    w.Attach(&sim);
+   sim.remove_pub(w.get_id()); //does not display sim
    w.run();
 
 
