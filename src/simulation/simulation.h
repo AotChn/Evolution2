@@ -13,7 +13,10 @@ private:
 public:
     simulation();
     ~simulation(){}
-
+    
+//===========================================
+//	WINDOW INTERACTION
+//===========================================
     void onNotify(sf::RenderWindow& window, int event) override;
     void draw(sf::RenderWindow& window);
     bool end();

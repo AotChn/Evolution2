@@ -25,7 +25,6 @@ public:
 
     //added new subscribers 
     virtual void Attach(Subscriber *subscriber);
-  
     //remove subscriber
     virtual void Detach(Subscriber *subscriber);
   
@@ -36,9 +35,11 @@ public:
  * DEBUG 
  * ========================================================================= */
 
+    //prints the number of subscribers
     void print_sub();
-    //return total_subs 
+    //return total amount of subscribers
     int count_sub();
+    //returns the id of this publisher
     int get_id();
 
 protected:
@@ -60,7 +61,9 @@ public:
   // Action happens : 
   // virtual void onNotify() {assert(false);};
  
+    //debug detach message
     virtual void Detach_msg();
+    //debug attach message
     virtual void Attach_msg();
 
     //adds publisher to list of subscriptions
@@ -69,7 +72,7 @@ public:
     void remove_pub(int i);
     //finds index pub is stored
     int find_pub(int _id);
-
+    //counts the amount of subscriptions 
     int count_subscriptions();
 
 protected:

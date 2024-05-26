@@ -8,7 +8,8 @@ void run_sim();
 
 int main() {
 
-   run_visual();
+   //run_visual();
+   run_sim();
    
    std::cout<<"working"<<std::endl;
    return 0;
@@ -18,7 +19,7 @@ int main() {
 
 
 void run_visual() {
-   int input = 15,
+   int input = 6,
       hidden = 3,
       hiddentwo = 4,
       output = 5;
@@ -39,10 +40,10 @@ void run_visual() {
    inputs[3].Links = {1};
    inputs[4].Links = {0,1};
    inputs[5].Links = {1};
-   inputs[6].Links = {2};
-   inputs[7].Links = {1};
-   inputs[8].Links = {0,2};
-   inputs[9].Links = {1};
+   // inputs[6].Links = {2};
+   // inputs[7].Links = {1};
+   // inputs[8].Links = {0,2};
+   // inputs[9].Links = {1};
    
    for (int i=0; i<hidden; i++) {
       tempNode::Node n;
@@ -84,7 +85,8 @@ void run_visual() {
       std::cout<<"size :" << info[i].size() << "\n";
    }
 
-   NodeVisual<std::vector<tempNode::Node>> N(3);
+   NodeVisual<std::vector<tempNode::Node>> N;
+   N.set_parameters(500, 500, 200, 200);
    N.setNodeList(info);
    Window w;
    w.Attach(&N);

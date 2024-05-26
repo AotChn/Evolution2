@@ -8,6 +8,10 @@ const unsigned int SCREEN_WIDTH = 1500;
 const unsigned int SCREEN_HEIGHT = 1000;
 
 namespace board_params {
+    const double width = 500;
+    const double height = 500;
+    const double off_x = 200;
+    const double off_y = 200;
     const unsigned int CELLS_AMT = 200;
     const unsigned int FOOD_AMT = 10000;
 }

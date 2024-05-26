@@ -33,21 +33,21 @@ void Cell::move() {
     validate();
 }
 
-void Cell::validate(int k) { //keep cells on the board
-    if (pos.x > SCREEN_WIDTH) {
-        pos.x = SCREEN_WIDTH-k;
+void Cell::validate(double width, double height, double offset_x, double offset_y, int k) { //keep cells on the board
+    if (pos.x > width + offset_x) {
+        pos.x = width + offset_x -k;
         dir.x *= -1;
     }
-    if (pos.y > SCREEN_HEIGHT) {
-        pos.y = SCREEN_HEIGHT-k;
+    if (pos.y > height + offset_y) {
+        pos.y = height + offset_y - k;
         dir.y *= -1;
     }
-    if (pos.x + (speed * dir.x) <= 0) {
-        pos.x = 0+k;
+    if (pos.x + (speed * dir.x) <= 0 + offset_x) {
+        pos.x = 0 + offset_x + k;
         dir.x *= -1;
     }
-    if (pos.y + (speed * dir.y) <= 0) {
-        pos.y = 0+k;
+    if (pos.y + (speed * dir.y) <= 0 + offset_y) {
+        pos.y = 0 + offset_y + k;
         dir.y *= -1;
     }
 }

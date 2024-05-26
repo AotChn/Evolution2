@@ -25,6 +25,7 @@ public:
 //===========================================
 //	BOARD MANIPULATION
 //===========================================
+
      //initializes board 
     void init_board(int food=board_params::FOOD_AMT, int cells=board_params::CELLS_AMT);
     //add food with pos 
@@ -47,6 +48,7 @@ public:
 //===========================================
 //	UPDATE
 //===========================================
+
     //updates all actions on board
     void update(sf::Clock clock);
     //updates cell actions
@@ -57,6 +59,7 @@ public:
 //===========================================
 //	ACCESSORS
 //===========================================
+
     //return cells vector
     std::vector<Animal>* get_cells();
     //returns food vector 
