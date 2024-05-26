@@ -70,6 +70,8 @@ public:
     //finds index pub is stored
     int find_pub(int _id);
 
+    int count_subscriptions();
+
 protected:
     int _id;
     static int _static_number;

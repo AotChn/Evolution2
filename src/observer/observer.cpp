@@ -127,3 +127,7 @@ void remove(std::vector<T>& v, int idx) {
         }
         return -1;
     }
+
+    int Subscriber::count_subscriptions() {
+        return _subscribed.size();
+    }

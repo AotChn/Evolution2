@@ -5,3 +5,4 @@
 #include "src/simulation/simulation.h"
 #include "src/cell/cell.h"
 //#include "src/utils/utils.h"
+#include "src/NNVisual/NNVisual.h"
