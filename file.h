@@ -6,3 +6,4 @@
 #include "src/cell/cell.h"
 //#include "src/utils/utils.h"
 #include "src/NNVisual/NNVisual.h"
+#include "src/plot/plot.h"

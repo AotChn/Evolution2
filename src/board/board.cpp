@@ -40,8 +40,8 @@ void Board::add_cell(int x, int y, int s) {
 }
 
 void Board::add_cell(int speed_MIN, int speed_MAX) {
-    int x = utils::gen_num(0, SCREEN_WIDTH);
-    int y = utils::gen_num(0, SCREEN_HEIGHT);
+    int x = utils::gen_num(0 + board_params::off_x, board_params::width);
+    int y = utils::gen_num(0 + board_params::off_y, board_params::height);
     int s = utils::gen_num(speed_MIN, speed_MAX);
     add_cell(x, y, s);
 }
@@ -53,8 +53,8 @@ void Board::add_food(int x, int y) {
 }
 
 void Board::add_food() {
-    int x = utils::gen_num(0, SCREEN_WIDTH);
-    int y = utils::gen_num(0, SCREEN_HEIGHT);
+    int x = utils::gen_num(0 + board_params::off_x, board_params::width);
+    int y = utils::gen_num(0 + board_params::off_y, board_params::height);
     add_food(x, y);
 }
 
@@ -96,7 +96,7 @@ void Board::fill_cells(int amt) {
 
 void Board::update_cells() {
     for (int i=0; !cells.empty() && i<cells.size()-1; i++) {
-        if (!food.empty()) {
+        if (!food.empty() && cells[i].is_alive()) {
             int closest = closest_cell(cells[i].get_position());
             cells[i].seek_food(food[closest].get_position());
             cells[i].move();
@@ -114,16 +114,14 @@ void Board::update_cells() {
 }
 
 void Board::update_food() {
-
+    fill_food(10);
 }
 
 void Board::update(sf::Clock clock) {
-    if (static_cast<int>(clock.getElapsedTime().asSeconds()) % 1 == 0) {
-        //clock.restart();
-        //gen_food();
+    if (static_cast<int>(clock.getElapsedTime().asSeconds()) % 3 == 0) {
+        update_food();
     }
     update_cells();
-    update_food();
     //std::cout<<food.size()<<"\n";
 }
 

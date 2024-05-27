@@ -13,7 +13,7 @@ public:
     }
 
     virtual void draw(sf::RenderWindow& window) override {
-        sf::CircleShape cell(2);
+        sf::CircleShape cell(1);
         cell.setFillColor(sf::Color::Red);
         if (alive) {
             cell.setPosition(get_vector2f());

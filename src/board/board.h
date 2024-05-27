@@ -35,7 +35,7 @@ public:
     //add cell with pos and speed
     void add_cell(int x, int y, int s);
     //add cell randomly
-    void add_cell(int speed_MIN=1, int speed_MAX=4);
+    void add_cell(int speed_MIN=1, int speed_MAX=20);
     //returns index of closeset food cell
     int closest_cell(Position);
     //fills board with cells and food
